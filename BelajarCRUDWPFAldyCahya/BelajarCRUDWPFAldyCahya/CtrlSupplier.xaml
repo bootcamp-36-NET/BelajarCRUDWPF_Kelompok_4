@@ -26,7 +26,7 @@
                                 <Button x:Name="btnDelete" Content="Delete" HorizontalAlignment="Left" VerticalAlignment="Top" Width="99" Margin="637,256,0,0" Click="btnDelete_Click" RenderTransformOrigin="-0.091,0.75" Background="Black" BorderBrush="DeepSkyBlue"/>
                                 <!--<TextBox x:Name="txtJoinDate" HorizontalAlignment="Left" Height="46" TextWrapping="Wrap" VerticalAlignment="Top" Width="516" Margin="220,202,0,0" TextChanged="txtJoinDate_TextChanged" FontSize="30"/>-->
                                 <Label Content="Join Date" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="3.079,3.622" Margin="105,202,0,0" FontSize="20" FontFamily="Arial" FontWeight="Bold"/>
-                                <DatePicker HorizontalAlignment="Left" VerticalAlignment="Top" x:Name="dateJoinDate" Foreground="Black" Margin="637,256,0,0" SelectedDateChanged="dateJoinDate_SelectedDateChanged"/>
+                                <DatePicker HorizontalAlignment="Left" VerticalAlignment="Top" x:Name="dateJoinDate" Foreground="Black" Margin="220,189,0,0" SelectedDateChanged="dateJoinDate_SelectedDateChanged" Height="44" Width="516"/>
                             </Grid>
                         </Grid>
                     </StackPanel>

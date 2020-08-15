@@ -47,6 +47,10 @@ namespace BelajarCRUDWPFAldyCahya
 
             switch (index)
             {
+                case 0:
+                    GridPrincipal.Children.Clear();
+                    GridPrincipal.Children.Add(new CtrlHome());
+                    break;
                 case 1:
                     GridPrincipal.Children.Clear();
                     GridPrincipal.Children.Add(new CtrlSupplier());
@@ -55,6 +59,13 @@ namespace BelajarCRUDWPFAldyCahya
                     GridPrincipal.Children.Clear();
                     GridPrincipal.Children.Add(new CtrlItem());
                     break;
+                case 3:
+                    GridPrincipal.Children.Clear();
+                    GridPrincipal.Children.Add(new CtrlTransactionItem());
+                    break;
+                case 4:
+                    GridPrincipal.Children.Clear();
+                    GridPrincipal.Children.Add(new CtrlTransaction());
                 default:
                     break;
             }

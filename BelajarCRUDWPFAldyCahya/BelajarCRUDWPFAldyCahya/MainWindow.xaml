@@ -16,7 +16,7 @@
         Title="MainWindow" Height="600" Width="1024" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" WindowStyle="None" >
     <Grid Background="#FFEEEEEE" MouseDown="Grid_MouseDown">
        <StackPanel>
-            <Grid Background="#FF0069C0" Height="10"/>
+            <Grid Background="Black" Height="10"/>
             <Grid Margin="5">
                 <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
                     <TextBlock Text="Belajar CRUD WPF AALDY CAHYA" VerticalAlignment="Center" FontSize="20" Margin="20 0"/>
@@ -50,10 +50,10 @@
         <Grid  Margin="250 55 0 0">
             <Grid x:Name="GridPrincipal" HorizontalAlignment="Center" VerticalAlignment="Center"/>
 
-        </Grid>        
-        <Grid Width="250" HorizontalAlignment="Left" Background="DarkGray">
+        </Grid>
+        <Grid Width="250" HorizontalAlignment="Left" Background="#FF097FA6">
             <materialDesign:TransitioningContent x:Name="TransitionName" OpeningEffect="{materialDesign:TransitionEffect SlideInFromLeft, Duration=0:0:0.2}">           
-                <Grid x:Name="GridCursor" Margin="0 100 0 0" VerticalAlignment="Top" Background="DarkGray" Width="10" HorizontalAlignment="Left" Height="60"/>
+                <Grid x:Name="GridCursor" Margin="0 100 0 0" VerticalAlignment="Top" Background="DeepSkyBlue" Width="10" HorizontalAlignment="Left" Height="60"/>
             </materialDesign:TransitioningContent>
             <ListView x:Name="ListViewMenu" Margin="0 100" Foreground="White" SelectionChanged="ListView_SelectionChanged">
                 <ListViewItem Height="60">
@@ -72,6 +72,18 @@
                     <StackPanel Orientation="Horizontal">
                         <materialDesign:PackIcon Kind="AccountCheck" Width="30" Height="30" VerticalAlignment="Center" Margin="5"/>
                         <TextBlock Text="Item" FontSize="26" VerticalAlignment="Center" Margin="20 0"/>
+                    </StackPanel>
+                </ListViewItem>
+                <ListViewItem Height="60">
+                    <StackPanel Orientation="Horizontal">
+                        <materialDesign:PackIcon Kind="AccountCheck" Width="30" Height="30" VerticalAlignment="Center" Margin="5"/>
+                        <TextBlock Text="Transaction Item" FontSize="20" VerticalAlignment="Center" Margin="20 0"/>
+                    </StackPanel>
+                </ListViewItem>
+                <ListViewItem Height="60">
+                    <StackPanel Orientation="Horizontal">
+                        <materialDesign:PackIcon Kind="AccountCheck" Width="30" Height="30" VerticalAlignment="Center" Margin="5"/>
+                        <TextBlock Text="Transaction" FontSize="26" VerticalAlignment="Center" Margin="20 0"/>
                     </StackPanel>
                 </ListViewItem>
 
