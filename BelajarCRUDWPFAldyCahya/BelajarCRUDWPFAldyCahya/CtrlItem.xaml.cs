@@ -37,7 +37,7 @@ namespace BelajarCRUDWPFAldyCahya
                 {
                     comboBox1.ItemsSource = c.Suppliers.ToList();
                     comboBox1.SelectedValuePath = "Id";
-                    comboBox1.DisplayMemberPath = "Name";
+                    comboBox1.DisplayMemberPath = "Id";
                 }
             }
             catch (Exception ee)
@@ -50,7 +50,7 @@ namespace BelajarCRUDWPFAldyCahya
         {
             try
             {
-                if (txtItemName.Text.Equals("") || txtItemId.Text.Equals("") || txtPrice.Text.Equals("") || txtStock.Text.Equals(""))
+                if (txtItemName.Text.Equals("") || txtPrice.Text.Equals("") || txtStock.Text.Equals(""))
                 {
                     MessageBox.Show("data must be inputed", "Information",
                         MessageBoxButton.OK,
@@ -91,12 +91,12 @@ namespace BelajarCRUDWPFAldyCahya
         }
         private void txtSearchItem_TextChanged(object sender, TextChangedEventArgs e)
         {
-            var filteredData = myContext.Items.Where(I => I.Id.ToString().Contains(txtSearchItem.Text) || I.Name.Contains(txtSearchItem.Text) || I.Price.ToString().Contains(txtPrice.Text) || I.Stock.ToString().Contains(txtStock.Text)).ToList();
+            var filteredData = myContext.Items.Where(I => I.Id.ToString().Contains(txtSearchItem.Text) || I.Name.Contains(txtSearchItem.Text) || I.Price.ToString().Contains(txtSearchItem.Text) || I.Stock.ToString().Contains(txtSearchItem.Text) || I.Supplier_Id.ToString().Contains(txtSearchItem.Text)).ToList();
             dataGridItem.ItemsSource = filteredData;
         }
         private void btnSearchItem_Click(object sender, RoutedEventArgs e)
         {
-            var filteredData = myContext.Items.Where(I => I.Id.ToString().Contains(txtSearchItem.Text) || I.Name.Contains(txtSearchItem.Text) || I.Price.ToString().Contains(txtPrice.Text) || I.Stock.ToString().Contains(txtStock.Text)).ToList();
+            var filteredData = myContext.Items.Where(I => I.Id.ToString().Contains(txtSearchItem.Text) || I.Name.Contains(txtSearchItem.Text) || I.Price.ToString().Contains(txtSearchItem.Text) || I.Stock.ToString().Contains(txtSearchItem.Text) || I.Supplier_Id.ToString().Contains(txtSearchItem.Text)).ToList();
             dataGridItem.ItemsSource = filteredData;
         }
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
