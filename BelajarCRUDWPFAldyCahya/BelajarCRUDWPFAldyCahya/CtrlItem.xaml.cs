@@ -28,6 +28,7 @@ namespace BelajarCRUDWPFAldyCahya
         {
             InitializeComponent();
             fillComboBox();
+            dataGridItem.ItemsSource = myContext.Items.ToList();
         }
         public void fillComboBox()
         {

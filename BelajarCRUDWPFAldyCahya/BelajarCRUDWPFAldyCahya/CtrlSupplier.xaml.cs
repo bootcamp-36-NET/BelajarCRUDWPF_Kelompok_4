@@ -14,6 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Drawing;
 
 namespace BelajarCRUDWPFAldyCahya
 {
@@ -166,8 +167,7 @@ namespace BelajarCRUDWPFAldyCahya
             
         }
         private void TxtSearch_TextChanged(object sender, TextChangedEventArgs e)
-        {
-     
+        {     
             var filteredData = myContext.Suppliers.Where(Q => Q.Id.ToString().Contains(txtSearch.Text) || Q.Name.Contains(txtSearch.Text)).ToList();
             dataGridSupplier.ItemsSource = filteredData;
         }

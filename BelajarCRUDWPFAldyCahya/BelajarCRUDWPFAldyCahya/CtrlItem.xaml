@@ -24,7 +24,7 @@
 
                                 <Label Content="Learn Windows Presentation Foundation" Margin="220,21,142,0" Width="454" Height="33" FontFamily="Arial Black" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Top"/>
 
-                                <TextBox x:Name="txtItemId" HorizontalAlignment="Left" Height="31" TextWrapping="Wrap" VerticalAlignment="Top" Width="121" Margin="265,109,0,0" TextChanged="TextBox_TextChanged" SpellCheck.IsEnabled="True"/>
+                                <TextBox x:Name="txtItemId" IsReadOnly="True" HorizontalAlignment="Left" Height="31" TextWrapping="Wrap" VerticalAlignment="Top" Width="121" Margin="265,109,0,0" TextChanged="TextBox_TextChanged" SpellCheck.IsEnabled="True"/>
                                 <Label Content="Id:" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="3.079,3.622" Margin="174,119,0,0" FontFamily="Arial" FontWeight="Bold" Height="21" Width="25"/>
 
                                 <Button x:Name="btnRefresh" Content="Refresh" HorizontalAlignment="Left" VerticalAlignment="Top" Width="65" Margin="337,244,0,0" RenderTransformOrigin="0.242,-0.114" Click="btnRefresh_Click" Background="Black" BorderBrush="DeepSkyBlue" Height="22" FontSize="12"/>
