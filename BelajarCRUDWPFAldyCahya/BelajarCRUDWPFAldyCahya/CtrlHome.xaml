@@ -6,7 +6,13 @@
              xmlns:local="clr-namespace:BelajarCRUDWPFAldyCahya"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
+
     <Grid>
-            
+        <Grid HorizontalAlignment="Left" Height="440" VerticalAlignment="Top" Width="790">
+            <Label Content="HELLO WORLD&#xD;&#xA;WELCOME TO OUR WEBSITE&#xD;&#xA;HAVE FUN" HorizontalAlignment="Left" VerticalAlignment="Top" Height="430" Width="481" Margin="243,10,0,0" Background="#FFFDFAFA" FlowDirection="RightToLeft" FontWeight="Bold"/>
+            <Calendar HorizontalAlignment="Left" VerticalAlignment="Top" Margin="346,50,0,0"/>
+        </Grid>
+
     </Grid>
+
 </UserControl>
