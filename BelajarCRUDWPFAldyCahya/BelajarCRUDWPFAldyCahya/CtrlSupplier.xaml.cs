@@ -14,6 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Drawing;
 
 namespace BelajarCRUDWPFAldyCahya
 {
@@ -26,7 +27,7 @@ namespace BelajarCRUDWPFAldyCahya
         public CtrlSupplier()
         {
             InitializeComponent();
-            dataGrid.ItemsSource = myContext.Suppliers.ToList();
+            dataGridSupplier.ItemsSource = myContext.Suppliers.ToList();
         }
         private void customizeDesign()
         {
@@ -39,7 +40,7 @@ namespace BelajarCRUDWPFAldyCahya
 
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void btnSave_Click(object sender, RoutedEventArgs e)
         {
             try
             {
@@ -60,12 +61,15 @@ namespace BelajarCRUDWPFAldyCahya
                         var input = new Supplier()
                         {
                             Name = txtName.Text,
+                            Id = txtId.Text,
                             JoinDate = dateJoinDate.SelectedDate.Value
                         };
                         myContext.Suppliers.Add(input);
                         myContext.SaveChanges();
                         txtName.Text = "";
-                        dataGrid.ItemsSource = myContext.Suppliers.ToList();
+                        txtId.Text = "";
+                        dateJoinDate.SelectedDate = null;
+                        dataGridSupplier.ItemsSource = myContext.Suppliers.ToList();
                     }
                 }
             }
@@ -78,11 +82,11 @@ namespace BelajarCRUDWPFAldyCahya
 
         private void DataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            var supplier = dataGrid.SelectedItem as Supplier;
+            var supplier = dataGridSupplier.SelectedItem as Supplier;
             txtName.Text = supplier.Name;
             txtId.Text = supplier.Id;
             dateJoinDate.SelectedDate = supplier.JoinDate;
-            dataGrid.ItemsSource = myContext.Suppliers.ToList();
+            dataGridSupplier.ItemsSource = myContext.Suppliers.ToList();
         }
 
         private void btnUpdate_Click(object sender, RoutedEventArgs e)
@@ -104,12 +108,12 @@ namespace BelajarCRUDWPFAldyCahya
                         MessageBoxImage.Information);
                     if (update == MessageBoxResult.Yes)
                     {
-                        string Id = txtId.Text;
+                        string Id = txtId.Text;                        
                         var supplier = myContext.Suppliers.Find(Id);
                         supplier.Name = txtName.Text;
                         supplier.JoinDate = dateJoinDate.SelectedDate.Value;
                         myContext.SaveChanges();
-                        dataGrid.ItemsSource = myContext.Suppliers.ToList();
+                        dataGridSupplier.ItemsSource = myContext.Suppliers.ToList();
                         txtId.Text = "";
                         txtName.Text = "";
                     }
@@ -145,8 +149,8 @@ namespace BelajarCRUDWPFAldyCahya
                         var supplier = myContext.Suppliers.Find(Id);
                         myContext.Suppliers.Remove(supplier);
                         myContext.SaveChanges();
-                        dataGrid.ItemsSource = myContext.Suppliers.ToList();
-                        dataGrid.SelectedItem = null;
+                        dataGridSupplier.ItemsSource = myContext.Suppliers.ToList();
+                        dataGridSupplier.SelectedItem = null;
                         txtId.Text = "";
                         txtName.Text = "";
                     }
@@ -161,6 +165,65 @@ namespace BelajarCRUDWPFAldyCahya
         private void dateJoinDate_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
         {
             
+        }
+        private void TxtSearch_TextChanged(object sender, TextChangedEventArgs e)
+        {     
+            var filteredData = myContext.Suppliers.Where(Q => Q.Id.ToString().Contains(txtSearch.Text) || Q.Name.Contains(txtSearch.Text)).ToList();
+            dataGridSupplier.ItemsSource = filteredData;
+        }
+        private void btnSearch_Click(object sender, RoutedEventArgs e)
+        {
+            var filteredData = myContext.Suppliers.Where(Q => Q.Id.ToString().Contains(txtSearch.Text) || Q.Name.Contains(txtSearch.Text)).ToList();
+            dataGridSupplier.ItemsSource = filteredData;
+
+        }
+        private void DataGridSupplier_SelectedCellsChanged(object sender, SelectedCellsChangedEventArgs e)
+        {
+            if (dataGridSupplier.SelectedItem != null)
+            {
+                var item = dataGridSupplier.SelectedItem as Supplier;
+                txtId.Text = Convert.ToString(item.Id);
+                txtName.Text = item.Name;
+                dateJoinDate.SelectedDate = item.JoinDate;
+            }
+        }
+        private void BtnDelete2_Click(object sender, RoutedEventArgs e)
+        {
+
+            try
+            {             
+                MessageBoxResult delete = MessageBox.Show("the data will be deleted",
+                    "Confirmation",
+                    MessageBoxButton.YesNo,
+                    MessageBoxImage.Information);
+                if (delete == MessageBoxResult.Yes)
+                {
+                    string Id = txtId.Text;
+                    var supplier = myContext.Suppliers.Find(Id);
+                    myContext.Suppliers.Remove(supplier);
+                    myContext.SaveChanges();
+                    dataGridSupplier.ItemsSource = myContext.Suppliers.ToList();
+                    dataGridSupplier.SelectedItem = null;
+                    txtId.Text = "";
+                    txtName.Text = "";
+                    dateJoinDate.SelectedDate = null;
+                }              
+            }
+            catch (Exception er)
+            {
+                Console.WriteLine("please, select the data");
+                Console.WriteLine(er.Message);
+            }
+        }
+
+        private void btnRefresh_Click(object sender, RoutedEventArgs e)
+        {
+            txtId.Text = "";
+            txtName.Text = "";
+            txtSearch.Text = "";
+            dateJoinDate.SelectedDate = null;
+            dataGridSupplier.SelectedItem = null;
+            dataGridSupplier.ItemsSource = myContext.Suppliers.ToList();
         }
     }
 }
