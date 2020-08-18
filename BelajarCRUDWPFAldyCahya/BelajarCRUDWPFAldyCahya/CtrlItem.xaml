@@ -1,0 +1,75 @@
+﻿<UserControl x:Class="BelajarCRUDWPFAldyCahya.CtrlItem"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:BelajarCRUDWPFAldyCahya"
+             mc:Ignorable="d" 
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             Height="auto" Width="auto">
+    <Grid>
+        <materialDesign:TransitioningContent x:Name="TrainsitioningContentSlide" OpeningEffect="{materialDesign:TransitionEffect SlideInFromLeft, Duration=0:0:0.8}">
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom">
+                <StackPanel>
+                    <StackPanel Margin="10">
+                        <Grid Grid.Column="1" Grid.Row="1" Background="AliceBlue" Height="578">
+                            <Grid>
+                                <TextBox x:Name="txtSearchItem" HorizontalAlignment="Left" Height="24" Margin="427,270,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="204"  Foreground="Black" TextChanged="txtSearchItem_TextChanged"/>
+                                <Button x:Name="btnSearchItem" VerticalAlignment="Top" HorizontalAlignment="Left" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Foreground="Black" Margin="643,270,0,0" Background="{x:Null}" BorderBrush="{x:Null}" Height="24" Click="btnSearchItem_Click" Width="31">
+                                    <materialDesign:PackIcon Kind="Search" Height="20" Width="20" Margin="0"/>
+                                </Button>
+
+                                <Label Content="Name:" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="3.079,3.622" Margin="174,69,0,0" FontFamily="Arial" FontWeight="Bold" Height="22" Width="55"/>
+                                <TextBox x:Name="txtItemName" HorizontalAlignment="Left" Height="32" TextWrapping="Wrap" VerticalAlignment="Top" Width="409" Margin="265,59,0,0" TextChanged="TextBox_TextChanged"/>
+
+                                <Label Content="Learn Windows Presentation Foundation" Margin="220,21,142,0" Width="454" Height="33" FontFamily="Arial Black" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+
+                                <TextBox x:Name="txtItemId" IsReadOnly="True" HorizontalAlignment="Left" Height="31" TextWrapping="Wrap" VerticalAlignment="Top" Width="121" Margin="265,109,0,0" TextChanged="TextBox_TextChanged" SpellCheck.IsEnabled="True"/>
+                                <Label Content="Id:" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="3.079,3.622" Margin="174,119,0,0" FontFamily="Arial" FontWeight="Bold" Height="21" Width="25"/>
+
+                                <Button x:Name="btnRefresh" Content="Refresh" HorizontalAlignment="Left" VerticalAlignment="Top" Width="65" Margin="337,244,0,0" RenderTransformOrigin="0.242,-0.114" Click="btnRefresh_Click" Background="Black" BorderBrush="DeepSkyBlue" Height="22" FontSize="12"/>
+                                <Button x:Name="btnSave" Content="Save" HorizontalAlignment="Left" VerticalAlignment="Top" Width="60" Margin="427,244,0,0" RenderTransformOrigin="0.242,-0.114" Click="btnSave_Click" Background="Black" BorderBrush="DeepSkyBlue" Height="22" FontSize="12"/>
+                                <Button x:Name="btnUpdate" Content="Edit" HorizontalAlignment="Left" VerticalAlignment="Top" Width="59" Margin="516,244,0,0" Click="btnUpdate_Click" RenderTransformOrigin="0.107,0.438" Background="Black" BorderBrush="DeepSkyBlue" Height="22" FontSize="12"/>
+                                <Button x:Name="btnDelete" Content="Delete" HorizontalAlignment="Left" VerticalAlignment="Top" Width="78" Margin="596,244,0,0" Click="btnDelete_Click" RenderTransformOrigin="-0.091,0.75" Background="Black" BorderBrush="DeepSkyBlue" Height="22" FontSize="12"/>
+                                <DataGrid x:Name="dataGridItem" HorizontalAlignment="Left" Height="192"  Margin="102,0,0,87" VerticalAlignment="Bottom" Width="632" Background="#FFE1F3F9" BorderBrush="#8900BFFF" SelectedCellsChanged="DataGridItem_SelectedCellsChanged" VerticalScrollBarVisibility="Visible" AutoGenerateColumns="False" IsReadOnly="True">
+                                    <DataGrid.Columns>
+                                        <DataGridTextColumn Header="Id"
+                                                            Binding="{Binding Id}"/>
+                                        <DataGridTextColumn Header="Name"
+                                                            Binding="{Binding Name}"/>
+                                        <DataGridTextColumn Header="Price"
+                                                            Binding="{Binding Price}"/>
+                                        <DataGridTextColumn Header="Stock"
+                                                            Binding="{Binding Stock}"/>
+                                        <DataGridTextColumn Header="Supplier Id"
+                                                            Binding="{Binding Supplier_Id}"/>
+                                        <DataGridTemplateColumn Header="Action">
+                                            <DataGridTemplateColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <Button x:Name="btnDeletedgItem" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Background="DeepSkyBlue" Height="20" Width="20" BorderBrush="{x:Null}" Click="BtnDelete2_Click">
+                                                        <materialDesign:PackIcon Kind="Trash"  Height="15" Width="15" Margin="0"/>
+                                                    </Button>
+                                                </DataTemplate>
+                                            </DataGridTemplateColumn.CellTemplate>
+                                        </DataGridTemplateColumn>
+                                    </DataGrid.Columns>
+                                </DataGrid>
+                                <TextBox x:Name="txtPrice" HorizontalAlignment="Left" Height="32" TextWrapping="Wrap" VerticalAlignment="Top" Width="409" Margin="265,160,0,0" TextChanged="TextBox_TextChanged" SpellCheck.IsEnabled="True"/>
+                                <Label Content="Supplier Name:" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="3.079,3.622" Margin="423,119,0,0" FontFamily="Arial" FontWeight="Bold" Height="21" Width="123"/>
+                                <TextBox x:Name="txtStock" HorizontalAlignment="Left" Height="32" TextWrapping="Wrap" VerticalAlignment="Top" Width="409" Margin="265,209,0,0" TextChanged="TextBox_TextChanged" SpellCheck.IsEnabled="True"/>
+                                <Label Content="Price&#xD;&#xA;" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="3.079,3.622" Margin="174,160,0,0" FontFamily="Arial" FontWeight="Bold" Height="25" Width="45"/>
+                                <Label Content="Stock&#xA;" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="3.079,3.622" Margin="174,215,0,0" FontFamily="Arial" FontWeight="Bold" Height="26" Width="49"/>
+                                <ComboBox x:Name="comboBox1" HorizontalAlignment="Left" VerticalAlignment="Top" Width="126" Margin="536,119,0,0" Height="21" 
+                                          SelectedValue="{Binding Path=Supplier.Id}" IsEditable="True"
+                                          ItemsSource="{Binding Path=Supplier}"
+                                          SelectedValuePath="{Binding Path=Supplier.Id}"/>
+
+                            </Grid>
+                        </Grid>
+                    </StackPanel>
+                    <Button FontFamily="Champagne &amp; Limousines" Content="Aldy Cahya" FontSize="18" Margin="25" Background="DeepSkyBlue"/>
+                </StackPanel>
+            </StackPanel>
+        </materialDesign:TransitioningContent>
+    </Grid>
+</UserControl>
