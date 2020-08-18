@@ -4,9 +4,55 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:BelajarCRUDWPFAldyCahya"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             Height="auto" Width="auto">
     <Grid>
-            
+        <materialDesign:TransitioningContent x:Name="TrainsitionigContentSlide" OpeningEffect="{materialDesign:TransitionEffect SlideInFromLeft, Duration=0:0:0.8}">
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom">
+                <StackPanel>
+                    <StackPanel Margin="10">
+                        <Grid Grid.Column="1" Grid.Row="1" Background="AliceBlue" Height="600">
+                            <Grid>
+                                <TextBox x:Name="txtSearch" HorizontalAlignment="Left" Height="36" Margin="434,306,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="257"  Foreground="Black" FontSize="13" TextChanged="TxtSearch_TextChanged"/>
+                                <Button x:Name="btnSearch" VerticalAlignment="Top" HorizontalAlignment="Left" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Foreground="Black" Margin="696,306,0,0" Background="{x:Null}" BorderBrush="{x:Null}" FontSize="12" Height="36" Click="btnSearch_Click">
+                                    <materialDesign:PackIcon Kind="Search" Height="20" Width="20" Margin="0"/>
+                                </Button>
+                                <Label Content="Learn Windows Presentation Foundation" Margin="220,21,142,0" Width="454" Height="33" FontFamily="Arial Black" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+                                <!--<DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Width="639" Margin="97,362,0,36" SelectionChanged="DataGrid_SelectionChanged" Background="#FFE1F3F9" BorderBrush="#8900BFFF"/>-->
+                                <TextBox x:Name="txtId" HorizontalAlignment="Left" Height="46" TextWrapping="Wrap" VerticalAlignment="Top" Width="516" Margin="220,80,0,0" TextChanged="TextBox_TextChanged" SpellCheck.IsEnabled="True" FontSize="30"/>
+                                <Label Content="Id:" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="3.079,3.622" Margin="105,81,0,0" FontFamily="Arial" FontWeight="Bold" FontSize="20"/>
+                                <Label Content="Order Date" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="3.079,3.622" Margin="105,162,0,0" FontSize="20" FontFamily="Arial" FontWeight="Bold"/>
+                                <DatePicker HorizontalAlignment="Left" VerticalAlignment="Top" x:Name="dateOrderDate"  Foreground="Black" Margin="220,149,0,0" SelectedDateChanged="dateOrderDate_SelectedDateChanged" Height="44" Width="516" IsTodayHighlighted="True" BorderBrush="#8900BFFF" Background="Transparent" />
+
+                                <Button x:Name="btnRefresh" Content="Refresh" HorizontalAlignment="Left" VerticalAlignment="Top" Width="81" Margin="309,224,0,0" RenderTransformOrigin="0.242,-0.114" Click="btnRefresh_Click" Background="Black" BorderBrush="DeepSkyBlue"/>
+                                <Button x:Name="btnSave" Content="Save" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="424,224,0,0" RenderTransformOrigin="0.242,-0.114" Click="btnSave_Click" Background="Black" BorderBrush="DeepSkyBlue"/>
+                                <Button x:Name="btnUpdate" Content="Edit" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="536,224,0,0" Click="btnUpdate_Click" RenderTransformOrigin="0.107,0.438" Background="Black" BorderBrush="DeepSkyBlue"/>
+                                <Button x:Name="btnDelete" Content="Delete" HorizontalAlignment="Left" VerticalAlignment="Top" Width="96" Margin="640,224,0,0" Click="btnDelete_Click" RenderTransformOrigin="-0.091,0.75" Background="Black" BorderBrush="DeepSkyBlue"/>
+                                <DataGrid x:Name="dataGridTransaction" HorizontalAlignment="Left" Height="210"  Margin="105,0,0,43" VerticalAlignment="Bottom" Width="631" Background="#FFE1F3F9" BorderBrush="#8900BFFF" SelectedCellsChanged="DataGridSupplier_SelectedCellsChanged" VerticalScrollBarVisibility="Visible" AutoGenerateColumns="False" IsReadOnly="True">
+                                    <DataGrid.Columns>
+                                        <DataGridTextColumn Header="Id"
+                                                            Binding="{Binding Id}"/>
+                                        <DataGridTextColumn Header="Order Date"
+                                                            Binding="{Binding OrderDate, StringFormat='dd/MM/yyyy'}"/>
+                                        <DataGridTemplateColumn Header="Action">
+                                            <DataGridTemplateColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <Button x:Name="btnDeletedqSupplier" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Background="DeepSkyBlue" Height="20" Width="20" BorderBrush="{x:Null}" Click="BtnDelete2_Click">
+                                                        <materialDesign:PackIcon Kind="Trash"  Height="15" Width="15" Margin="0"/>
+                                                    </Button>
+                                                </DataTemplate>
+                                            </DataGridTemplateColumn.CellTemplate>
+                                        </DataGridTemplateColumn>
+                                    </DataGrid.Columns>
+                                </DataGrid>
+
+                            </Grid>
+                        </Grid>
+                    </StackPanel>
+                    <Button FontFamily="Champagne &amp; Limousines" Content="Aldy Cahya" FontSize="18" Margin="25" Background="DeepSkyBlue"/>
+                </StackPanel>
+            </StackPanel>
+        </materialDesign:TransitioningContent>
     </Grid>
 </UserControl>

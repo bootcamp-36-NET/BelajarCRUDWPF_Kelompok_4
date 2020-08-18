@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
@@ -19,6 +20,7 @@ namespace BelajarCRUDWPFAldyCahya.Model
         [MaxLength(4)]
         public string Supplier_Id { get; set; }
         public Supplier Supplier { get; set; }
+        public ICollection<TransactionItem> TransactionItems { set; get; }
 
     }
 }

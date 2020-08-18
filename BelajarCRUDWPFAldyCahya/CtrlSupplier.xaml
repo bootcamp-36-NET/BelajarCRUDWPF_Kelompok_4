@@ -31,10 +31,6 @@
                                 <Button x:Name="btnSave" Content="Save" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="424,256,0,0" RenderTransformOrigin="0.242,-0.114" Click="btnSave_Click" Background="Black" BorderBrush="DeepSkyBlue"/>
                                 <Button x:Name="btnUpdate" Content="Edit" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="536,256,0,0" Click="btnUpdate_Click" RenderTransformOrigin="0.107,0.438" Background="Black" BorderBrush="DeepSkyBlue"/>
                                 <Button x:Name="btnDelete" Content="Delete" HorizontalAlignment="Left" VerticalAlignment="Top" Width="99" Margin="637,256,0,0" Click="btnDelete_Click" RenderTransformOrigin="-0.091,0.75" Background="Black" BorderBrush="DeepSkyBlue"/>
-
-                               <Label Content="Join Date" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="3.079,3.622" Margin="105,202,0,0" FontSize="20" FontFamily="Arial" FontWeight="Bold"/>
-                                <DatePicker HorizontalAlignment="Left" VerticalAlignment="Top" x:Name="dateJoinDate" Foreground="Black" Margin="220,189,0,0" SelectedDateChanged="dateJoinDate_SelectedDateChanged" Height="44" Width="516"/>
-
                                 <DataGrid x:Name="dataGridSupplier" HorizontalAlignment="Left" Height="210"  Margin="105,0,0,43" VerticalAlignment="Bottom" Width="631" Background="#FFE1F3F9" BorderBrush="#8900BFFF" SelectedCellsChanged="DataGridSupplier_SelectedCellsChanged" VerticalScrollBarVisibility="Visible" AutoGenerateColumns="False" IsReadOnly="True">
                                     <DataGrid.Columns>
                                         <DataGridTextColumn Header="Id"

@@ -19,7 +19,7 @@
             <Grid Background="Black" Height="10"/>
             <Grid Margin="5">
                 <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
-                    <TextBlock Text="Belajar CRUD WPF AALDY CAHYA" VerticalAlignment="Center" FontSize="20" Margin="20 0"/>
+                    <TextBlock Text="Belajar CRUD WPF ALDI CAHYA" VerticalAlignment="Center" FontSize="20" Margin="20 0"/>
                     <Button Width="30" Height="30" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" Foreground="Gray">
                         <materialDesign:PackIcon Kind="Instagram"/>
                     </Button>
