@@ -18,7 +18,6 @@ namespace BelajarCRUDWPFAldyCahya.Model
         public string Name { get; set; }
         [Column(TypeName = "Date")]
         public DateTime JoinDate { get; set; }
-
         public ICollection<Item> Items { get; set; }
 
     }

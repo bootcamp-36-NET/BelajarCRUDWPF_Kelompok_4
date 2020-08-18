@@ -47,17 +47,13 @@ namespace BelajarCRUDWPFAldyCahya
 
             switch (index)
             {
-                case 0:
-                    GridPrincipal.Children.Clear();
-                    GridPrincipal.Children.Add(new CtrlHome());
-                    break;
                 case 1:
                     GridPrincipal.Children.Clear();
                     GridPrincipal.Children.Add(new CtrlSupplier());
                     break;
-                case 1:
+                case 2:
                     GridPrincipal.Children.Clear();
-                    GridPrincipal.Children.Add(new CtrlSupplier());
+                    GridPrincipal.Children.Add(new CtrlItem());
                     break;
                 case 3:
                     GridPrincipal.Children.Clear();
@@ -74,7 +70,7 @@ namespace BelajarCRUDWPFAldyCahya
         private void MoveCursorMenu(int index)
         {
             TransitionName.ApplyTemplate();
-            GridCursor.Margin = new Thickness(0, (100 + (60 * index)), 0, 0);
+            GridCursor.Margin = new Thickness(0, (100 + (6 * index)), 0, 0);
         }
     }
 }
