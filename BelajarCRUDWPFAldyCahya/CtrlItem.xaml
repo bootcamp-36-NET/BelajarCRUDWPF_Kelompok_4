@@ -55,7 +55,7 @@
                                     </DataGrid.Columns>
                                 </DataGrid>
                                 <TextBox x:Name="txtPrice" HorizontalAlignment="Left" Height="32" TextWrapping="Wrap" VerticalAlignment="Top" Width="409" Margin="265,160,0,0" TextChanged="TextBox_TextChanged" SpellCheck.IsEnabled="True"/>
-                                <Label Content="Supplier Name:" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="3.079,3.622" Margin="423,119,0,0" FontFamily="Arial" FontWeight="Bold" Height="21" Width="123"/>
+                                <Label Content="Supplier Id:" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="3.079,3.622" Margin="423,119,0,0" FontFamily="Arial" FontWeight="Bold" Height="21" Width="123"/>
                                 <TextBox x:Name="txtStock" HorizontalAlignment="Left" Height="32" TextWrapping="Wrap" VerticalAlignment="Top" Width="409" Margin="265,209,0,0" TextChanged="TextBox_TextChanged" SpellCheck.IsEnabled="True"/>
                                 <Label Content="Price&#xD;&#xA;" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="3.079,3.622" Margin="174,160,0,0" FontFamily="Arial" FontWeight="Bold" Height="25" Width="45"/>
                                 <Label Content="Stock&#xA;" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="3.079,3.622" Margin="174,215,0,0" FontFamily="Arial" FontWeight="Bold" Height="26" Width="49"/>
