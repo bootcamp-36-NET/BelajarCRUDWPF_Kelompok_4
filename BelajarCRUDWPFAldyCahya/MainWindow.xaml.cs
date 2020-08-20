@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -47,6 +48,10 @@ namespace BelajarCRUDWPFAldyCahya
 
             switch (index)
             {
+                case 0:
+                    GridPrincipal.Children.Clear();
+                    GridPrincipal.Children.Add(new CtrlHome());
+                    break;
                 case 1:
                     GridPrincipal.Children.Clear();
                     GridPrincipal.Children.Add(new CtrlSupplier());
@@ -70,7 +75,14 @@ namespace BelajarCRUDWPFAldyCahya
         private void MoveCursorMenu(int index)
         {
             TransitionName.ApplyTemplate();
-            GridCursor.Margin = new Thickness(0, (100 + (6 * index)), 0, 0);
+            GridCursor.Margin = new Thickness(0, (100 + (60 * index)), 0, 0);
+        }
+
+        private void btnLogOut_Click(object sender, RoutedEventArgs e)
+        {
+            var login = new Login();
+            login.Show();
+            this.Close();
         }
     }
 }

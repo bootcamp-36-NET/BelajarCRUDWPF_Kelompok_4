@@ -33,6 +33,15 @@ namespace BelajarCRUDWPFAldyCahya
         {
             //panelSubMenuPanel.Visibility;
         }
+        private void Clear()
+        {
+            txtId.Text = "";
+            txtName.Text = "";
+            txtSearch.Text = "";
+            dateJoinDate.SelectedDate = null;
+            dataGridSupplier.SelectedItem = null;
+            dataGridSupplier.ItemsSource = myContext.Suppliers.ToList();
+        }
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
@@ -66,16 +75,13 @@ namespace BelajarCRUDWPFAldyCahya
                         };
                         myContext.Suppliers.Add(input);
                         myContext.SaveChanges();
-                        txtName.Text = "";
-                        txtId.Text = "";
-                        dateJoinDate.SelectedDate = null;
-                        dataGridSupplier.ItemsSource = myContext.Suppliers.ToList();
+                        Clear();
                     }
                 }
             }
             catch (Exception)
             {
-                Console.WriteLine("input failed");
+                MessageBox.Show("input failed");
             }
 
         }

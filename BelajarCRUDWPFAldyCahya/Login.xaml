@@ -1,0 +1,55 @@
+﻿<Window x:Class="BelajarCRUDWPFAldyCahya.Login"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BelajarCRUDWPFAldyCahya"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        Background="#FFFAFAFA"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        Title="Login" Height="600" Width="1024" WindowStyle="None">
+    <Grid MouseDown="Grid_MouseDown">
+        <Rectangle Height="48" VerticalAlignment="Bottom" RadiusY="10" RadiusX="10" Fill="White" Margin="576,0,35,78">
+            <Rectangle.Effect>
+                <DropShadowEffect BlurRadius="15" Direction="0" RenderingBias="Quality" ShadowDepth="1" Color="#FFBBBBBB"/>
+            </Rectangle.Effect>
+        </Rectangle>
+        <StackPanel>
+            <Grid Background="Black" Height="10"/>
+            <Grid Margin="5">
+                <StackPanel HorizontalAlignment="Center" Orientation="Horizontal"/>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="10 0">
+                    <Button x:Name="btnExit" Width="30" Height="30" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" Foreground="Gray" Click="btnExit_Click">
+                        <materialDesign:PackIcon Kind="Power"/>
+                    </Button>
+                </StackPanel>
+            </Grid>
+        </StackPanel>
+
+        <Rectangle Height="372" VerticalAlignment="Bottom" RadiusY="10" RadiusX="10" Fill="White" Margin="576,0,35,158">
+            <Rectangle.Effect>
+                <DropShadowEffect BlurRadius="15" Direction="0" RenderingBias="Quality" ShadowDepth="1" Color="#FFBBBBBB"/>
+            </Rectangle.Effect>
+        </Rectangle>
+        <Grid VerticalAlignment="Bottom" Margin="576,0,35,301" Height="170">
+            <StackPanel VerticalAlignment="Top" Margin="15,20,15,0">
+                <TextBox x:Name="txtEmail"  Margin="0,10" materialDesign:HintAssist.Hint="Email" Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontFamily="Champagne &amp; Limousines" FontSize="18" Height="58" TextChanged="txtEmail_TextChanged"/>
+                <PasswordBox x:Name="pwBox" Margin="0,10" materialDesign:HintAssist.Hint="Password" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" FontFamily="Champagne &amp; Limousines" FontSize="18" Height="50" PasswordChanged="pwBox_PasswordChanged"/>
+            </StackPanel>
+        </Grid>
+        <Button Click="btnSubmit_Click" x:Name="btnSubmit" Width="366" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="592,0,58,243" Content="Log In" FontSize="20" FontWeight="Bold"/>
+        <Image Source="Assets/home.png" Height="59" VerticalAlignment="Top" Margin="750,82,199,0"/>
+        <Image Source="Assets/instagram.png" Height="440" VerticalAlignment="Top" Margin="52,62,495,0"/>
+        <CheckBox x:Name="checkBoxRememberMe" Content="Remember Me" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="592,386,0,0" Checked="CheckBox_Checked" Height="41" Width="366" FontSize="20" Loaded="checkBoxRememberMe_Loaded"/>
+        <Button x:Name="btnSignUp" Content="Sign Up" HorizontalAlignment="Left" VerticalAlignment="Top" Width="96" Margin="815,470,0,0" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="DeepSkyBlue" Click="Button_Click" FontWeight="Bold" FontSize="16"/>
+        <Label Content="Don't have an account?" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="592,470,0,0" Height="29" Width="227" FontSize="20"/>
+        <Button Click="btnForgotPassword_Click" Content="Forgot password?" HorizontalAlignment="Left" VerticalAlignment="Top" Width="147" Background="{x:Null}" Foreground="#FFF95F5F" Margin="712,355,0,0" RenderTransformOrigin="1.67,0.688" BorderBrush="{x:Null}"/>
+        <Label Foreground="Red" x:Name="lblNameStatus" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="592,282,0,0" Width="366" FontSize="12"/>
+    </Grid>
+</Window>

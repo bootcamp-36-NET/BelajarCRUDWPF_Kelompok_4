@@ -2,6 +2,8 @@
 using BelajarCRUDWPFAldyCahya.Model;
 using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.Common;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -38,7 +40,7 @@ namespace BelajarCRUDWPFAldyCahya
                 {
                     comboBox1.ItemsSource = c.Suppliers.ToList();
                     comboBox1.SelectedValuePath = "Id";
-                    comboBox1.DisplayMemberPath = "Id";
+                    comboBox1.DisplayMemberPath = "Nama";
                 }
             }
             catch (Exception ee)
@@ -71,7 +73,7 @@ namespace BelajarCRUDWPFAldyCahya
                             Id = Convert.ToInt32(txtItemId.Text),
                             Price = Convert.ToInt32(txtPrice.Text),
                             Stock=Convert.ToInt32(txtStock.Text),
-                            Supplier_Id=comboBox1.Text
+                            Supplier_Id = comboBox1.Text
                         };
                         myContext.Items.Add(input);
                         myContext.SaveChanges();

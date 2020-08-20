@@ -16,8 +16,11 @@ namespace BelajarCRUDWPFAldyCahya.Model
         public string Id { get; set; }
         [MaxLength(128)]
         public string Name { get; set; }
+        public string Email { get; set; }
+        public string Password { get; set; }
         [Column(TypeName = "Date")]
         public DateTime JoinDate { get; set; }
+        public int gId { get; set; }
         public ICollection<Item> Items { get; set; }
 
     }

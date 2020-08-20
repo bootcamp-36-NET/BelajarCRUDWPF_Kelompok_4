@@ -55,9 +55,9 @@ namespace BelajarCRUDWPFAldyCahya
             {
                 using (MyContext c = new MyContext())
                 {
-                    comboBoxItem.ItemsSource = c.Transactions.ToList();
-                    comboBoxItem.SelectedValuePath = "Id";
-                    comboBoxItem.DisplayMemberPath = "Id";
+                    comboBoxTransaction.ItemsSource = c.Transactions.ToList();
+                    comboBoxTransaction.SelectedValuePath = "Id";
+                    comboBoxTransaction.DisplayMemberPath = "Id";
                 }
             }
             catch (Exception ee)

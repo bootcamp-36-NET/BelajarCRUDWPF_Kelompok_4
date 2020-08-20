@@ -15,34 +15,19 @@
         FontFamily="{DynamicResource MaterialDesignFont}"
         Title="MainWindow" Height="600" Width="1024" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" WindowStyle="None" >
     <Grid Background="#FFEEEEEE" MouseDown="Grid_MouseDown">
-       <StackPanel>
+        <StackPanel>
             <Grid Background="Black" Height="10"/>
             <Grid Margin="5">
                 <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
                     <TextBlock Text="Belajar CRUD WPF ALDI CAHYA" VerticalAlignment="Center" FontSize="20" Margin="20 0"/>
-                    <Button Width="30" Height="30" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" Foreground="Gray">
-                        <materialDesign:PackIcon Kind="Instagram"/>
-                    </Button>
-                    <Button Width="30" Height="30" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" Foreground="Gray">
-                        <materialDesign:PackIcon Kind="Whatsapp"/>
-                    </Button>
-                    <Button Width="30" Height="30" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" Foreground="Gray">
-                        <materialDesign:PackIcon Kind="Github"/>
-                    </Button>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="10 0">
-                    <Button x:Name="btnBell" Width="30" Height="30" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" Foreground="Gray">
-                        <materialDesign:PackIcon Kind="BellOutline"/>
-                    </Button>
-                    <Button x:Name="btnSetting" Width="30" Height="30" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" Foreground="Gray" Margin="0 0 10 0">
-                        <materialDesign:PackIcon Kind="Settings"/>
-                    </Button>
                     <Button x:Name="btnExit" Width="30" Height="30" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" Foreground="Gray" Click="btnExit_Click">
                         <materialDesign:PackIcon Kind="Power"/>
                     </Button>
                 </StackPanel>
 
-                
+
             </Grid>
 
 
@@ -52,7 +37,7 @@
 
         </Grid>
         <Grid Width="250" HorizontalAlignment="Left" Background="#FF097FA6">
-            <materialDesign:TransitioningContent x:Name="TransitionName" OpeningEffect="{materialDesign:TransitionEffect SlideInFromLeft, Duration=0:0:0.2}">           
+            <materialDesign:TransitioningContent x:Name="TransitionName" OpeningEffect="{materialDesign:TransitionEffect SlideInFromLeft, Duration=0:0:0.2}">
                 <Grid x:Name="GridCursor" Margin="0 100 0 0" VerticalAlignment="Top" Background="DeepSkyBlue" Width="10" HorizontalAlignment="Left" Height="60"/>
             </materialDesign:TransitioningContent>
             <ListView x:Name="ListViewMenu" Margin="0 100" Foreground="White" SelectionChanged="ListView_SelectionChanged">
@@ -70,7 +55,7 @@
                 </ListViewItem>
                 <ListViewItem Height="60">
                     <StackPanel Orientation="Horizontal">
-                        <materialDesign:PackIcon Kind="AccountCheck" Width="30" Height="30" VerticalAlignment="Center" Margin="5"/>
+                        <materialDesign:PackIcon Kind="AccountBalanceWallet" Width="30" Height="30" VerticalAlignment="Center" Margin="5"/>
                         <TextBlock Text="Item" FontSize="26" VerticalAlignment="Center" Margin="20 0"/>
                     </StackPanel>
                 </ListViewItem>
@@ -82,14 +67,18 @@
                 </ListViewItem>
                 <ListViewItem Height="60">
                     <StackPanel Orientation="Horizontal">
-                        <materialDesign:PackIcon Kind="AccountCheck" Width="30" Height="30" VerticalAlignment="Center" Margin="5"/>
+                        <materialDesign:PackIcon Kind="AddShoppingCart" Width="30" Height="30" VerticalAlignment="Center" Margin="5"/>
                         <TextBlock Text="Transaction" FontSize="26" VerticalAlignment="Center" Margin="20 0"/>
                     </StackPanel>
                 </ListViewItem>
 
             </ListView>
-            
-        </Grid>
 
+        </Grid>
+        <!--<TextBlock x:Name="WelcomeHeading"  HorizontalAlignment="Left" TextWrapping="Wrap" Text="Welcome to Our Website" VerticalAlignment="Top" Margin="467,254,0,0" Width="380" FontSize="30"/>-->
+
+        <TextBlock Height="23" HorizontalAlignment="Left" Margin="770,21,0,0" x:Name="WelcomeHeading" Text="Welcome:" VerticalAlignment="Top" FontSize="17" FontStretch="ExtraCondensed"/>
+        <TextBlock Height="23" HorizontalAlignment="Left" Margin="770,41,0,0" x:Name="TextBlockName"  VerticalAlignment="Top" FontSize="15" FontStretch="ExtraCondensed" />
+        <Button x:Name="btnLogOut" Click="btnLogOut_Click" Background="{x:Null}"  Content="Log Out" HorizontalAlignment="Left" VerticalAlignment="Top" Width="98" Margin="72,411,0,0" Foreground="#FFFBF8F8" Height="29" FontSize="16"/>
     </Grid>
 </Window>

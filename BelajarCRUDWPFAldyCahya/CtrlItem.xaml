@@ -41,8 +41,10 @@
                                                             Binding="{Binding Price}"/>
                                         <DataGridTextColumn Header="Stock"
                                                             Binding="{Binding Stock}"/>
-                                        <DataGridTextColumn Header="Supplier Id"
-                                                            Binding="{Binding Supplier_Id}"/>
+                                        <!--<DataGridTextColumn Header="Supplier Id"
+                                                            Binding="{Binding Supplier_Id}"/>-->
+                                        <DataGridTextColumn Header="Supplier Name"
+                                                            Binding="{Binding Supplier.Name}"/>
                                         <DataGridTemplateColumn Header="Action">
                                             <DataGridTemplateColumn.CellTemplate>
                                                 <DataTemplate>

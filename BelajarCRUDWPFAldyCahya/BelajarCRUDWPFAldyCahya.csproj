@@ -38,6 +38,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BCrypt.Net, Version=0.1.4141.31969, Culture=neutral, PublicKeyToken=f3bc8f8c31beeb49, processorArchitecture=MSIL">
+      <HintPath>..\packages\BCrypt.Net.0.1.0\lib\net35\BCrypt.Net.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -71,6 +74,23 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ForgotPassword.xaml.cs">
+      <DependentUpon>ForgotPassword.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202008200627264_addGui.cs" />
+    <Compile Include="Migrations\202008200627264_addGui.designer.cs">
+      <DependentUpon>202008200627264_addGui.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Registration.xaml.cs">
+      <DependentUpon>Registration.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Welcome.xaml.cs">
+      <DependentUpon>Welcome.xaml</DependentUpon>
+    </Compile>
+    <Page Include="CtrlHome.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="CtrlItem.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -87,6 +107,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="ForgotPassword.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Login.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -96,6 +124,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Context\MyContext.cs" />
+    <Compile Include="CtrlHome.xaml.cs">
+      <DependentUpon>CtrlHome.xaml</DependentUpon>
+    </Compile>
     <Compile Include="CtrlItem.xaml.cs">
       <DependentUpon>CtrlItem.xaml</DependentUpon>
     </Compile>
@@ -108,10 +139,21 @@
     <Compile Include="CtrlTransactionItem.xaml.cs">
       <DependentUpon>CtrlTransactionItem.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Login.xaml.cs">
+      <DependentUpon>Login.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Registration.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Welcome.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Migrations\202008150358277_InitialCreate.cs" />
@@ -125,6 +167,10 @@
     <Compile Include="Migrations\202008171352456_addTransactions.cs" />
     <Compile Include="Migrations\202008171352456_addTransactions.designer.cs">
       <DependentUpon>202008171352456_addTransactions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202008180817307_addAttributSupplier.cs" />
+    <Compile Include="Migrations\202008180817307_addAttributSupplier.designer.cs">
+      <DependentUpon>202008180817307_addAttributSupplier.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Item.cs" />
@@ -153,6 +199,12 @@
     <EmbeddedResource Include="Migrations\202008171352456_addTransactions.resx">
       <DependentUpon>202008171352456_addTransactions.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202008180817307_addAttributSupplier.resx">
+      <DependentUpon>202008180817307_addAttributSupplier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202008200627264_addGui.resx">
+      <DependentUpon>202008200627264_addGui.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -165,6 +217,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\home.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\welcome.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\instagram.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\welcome.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

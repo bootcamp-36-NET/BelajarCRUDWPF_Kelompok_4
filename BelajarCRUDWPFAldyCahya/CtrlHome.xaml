@@ -5,14 +5,9 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:BelajarCRUDWPFAldyCahya"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
-
+             Height="auto" Width="auto">
     <Grid>
-        <Grid HorizontalAlignment="Left" Height="440" VerticalAlignment="Top" Width="790">
-            <Label Content="HELLO WORLD&#xD;&#xA;WELCOME TO OUR WEBSITE&#xD;&#xA;HAVE FUN" HorizontalAlignment="Left" VerticalAlignment="Top" Height="430" Width="481" Margin="243,10,0,0" Background="#FFFDFAFA" FlowDirection="RightToLeft" FontWeight="Bold"/>
-            <Calendar HorizontalAlignment="Left" VerticalAlignment="Top" Margin="346,50,0,0"/>
-        </Grid>
-
+        <TextBlock Height="23" HorizontalAlignment="Left" Margin="10,10,0,0" x:Name="WelcomeHeading" Text="Welcome:" VerticalAlignment="Top" FontSize="17" FontStretch="ExtraCondensed"/>
+        <TextBlock Height="23" HorizontalAlignment="Left" Margin="90,10,0,0" x:Name="TextBlockName"  VerticalAlignment="Top" FontSize="15" FontStretch="ExtraCondensed" />
     </Grid>
-
 </UserControl>
